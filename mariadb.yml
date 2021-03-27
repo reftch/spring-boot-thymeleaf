@@ -1,0 +1,14 @@
+version: '2'
+services:
+  maria-db:
+    image: mariadb:10.3.7
+#    restart: always
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=spring_app_db
+      - MYSQL_USER=app_user
+      - MYSQL_PASSWORD=test123
+    ports:
+      - 3306:3306
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp

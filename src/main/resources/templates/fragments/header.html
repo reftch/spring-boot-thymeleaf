@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<body>
+<th:block th:fragment="header">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">
+                    <img th:src="@{/img/icon-compart.png}" alt="compart logo"/>
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a th:href="@{/}">HOME</a>
+                    </li>
+                    <li sec:authorize="hasRole('ROLE_ADMIN')" class="active">
+                        <a th:href="@{/swagger-ui.html}">SWAGGER</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</th:block>
+</body>
+</html>

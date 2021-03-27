@@ -1,0 +1,20 @@
+version: '2'
+services:
+  spring-boot-thymeleaf:
+    image: spring-boot-thymeleaf
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://maria-db:3306/spring_app_db
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+  maria-db:
+    extends:
+      file: mariadb.yml
+      service: maria-db
+  ldap:
+    extends:
+      file: apacheds.yml
+      service: apacheds

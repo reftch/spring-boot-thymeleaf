@@ -1,0 +1,49 @@
+version: 1
+
+dn: ou=Users,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: dc=example,dc=com
+objectclass: top
+objectclass: domain
+dc: example
+
+dn: uid=admin,ou=Users,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: admin
+sn: Kevin Spacey
+uid: admin
+userPassword: {SSHA}DH6IDpAeYYc82zlFT+feH32/nhAsAdqIAGUQPw==
+
+dn: cn=ADMIN,ou=Groups,dc=example,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: ADMIN
+uniqueMember: uid=admin,ou=Users,dc=example,dc=com
+
+dn: ou=Groups,dc=example,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Groups
+
+dn: uid=user,ou=Users,dc=example,dc=com
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: user
+sn: Tom Hanks
+uid: user
+userPassword: {SSHA}MxJl8UBesmI4yITqeEuCXHbWNkCZ2BckLd7MgQ==
+
+dn: cn=USER,ou=Groups,dc=example,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: USER
+uniqueMember: uid=user,ou=Users,dc=example,dc=com
+
